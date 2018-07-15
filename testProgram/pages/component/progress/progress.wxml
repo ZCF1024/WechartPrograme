@@ -1,0 +1,18 @@
+<view>
+  <!--
+       percent: 20, number 进度条显示的值(占得百分比)
+       show-info: false boolean 在进度条右侧显示百分比
+       stroke-width: 6 number 进度条宽度
+       activeColor: 已选中部分的颜色
+       backgroundColor: 未被选中的颜色
+       active: 显示动画
+       active-mode: "backwards" 
+                    backwards: 动画从头播；
+                    forwards：动画从上次结束点接着播	
+
+  -->
+  <progress percent="30" show-info="true" class="pro" />
+  <progress percent="30" stroke-width="10" activeColor="orange" backgroundColor="#8fbc8f" class="pro" />
+  <progress percent="60" active="true" class="pro" />
+  <progress percent="60" active="true" active-mode="forwards" class="pro" />
+</view>

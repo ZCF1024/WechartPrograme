@@ -1,0 +1,74 @@
+/* 加入page后height: 100% 才能生效，原因未知  */
+page {
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  background-color: royalblue;
+  display: flex;
+  flex-direction: row; /* 元素的主轴及元素在主轴上的排列方式
+                          column: 竖排列(默认)， 
+                          row: 横排列,
+                          column-reverse: 竖排(每排元素倒序) */
+  flex-wrap: wrap; /* 元素换行方式，默认不换行
+                      wrap: 满一行多余的元素换下一行排列; 
+                      wrap-reverse: 多余的放上一行 */
+
+  /* flex-flow: row wrap;  flex-flow 是 flex-direction 和 flex-wrap的简写 */
+
+  justify-content: space-between; /* 在主轴上的对齐方式
+                                flex-start: 从开始位置对齐(左对齐)(默认)
+                                flex-end: 从结束位置(右对齐)
+                                center: 居中对齐
+                                space-around: 在主轴上均匀分布(start-end两边有空间)
+                                space-between: 均匀分布(start-end两边没有空间)*/
+  align-items: baseline;/* 在交叉轴上的对齐方式
+                           flex-start: 从开始位置对齐
+                           flex-end: 从结束位置对齐
+                           baseline: 元素按元素内第一行文字对齐
+                           stretch: 和flex-start相似，当元素没有设置高度时，自动让元素占满整个容器
+                                    主轴为column时，不设置width，则stretch会使width变为100%
+                                    主轴为row时，不设置height，则stretch会使height变为100%
+                           */                       
+}
+
+.item {
+  height: 100rpx; 
+  width: 100rpx; 
+  background-color: gold;
+  border: 1px solid #fff;
+  flex-grow: 1;/*排列好后，若有多余空间，则item的每个元素放大相应比例(默认0)，每个占据一份(1/4,1/4,1/4,1/4)*/
+  flex-shrink: 4; /*空间不足时(不换行的情况下)，元素缩小比例(默认1)*/
+  
+  /* flex-basis: 100rpx; 在主轴上的占用的宽度 */
+
+  /* flex: 1 2 100px; 是flew-grow, flew-shrink和 flex-basis的简写 */
+}
+.i2{
+  display: flex;
+  /* align-items: flex-end; */
+  flex-grow: 2;/*有多于空间时 i3的元素占两份(1/5,2/5,1/5,1/5)*/
+  flex-shrink: 0; /*设置空间不足不缩小*/
+  flex-basis: 200rpx; /*在主轴上的占用的宽度*/
+    /* align-self: ;  参数跟align-items相同，单独设置元素对齐方式  */
+}
+.relative{
+  width: 100rpx;
+  height: 100rpx;
+  background-color: yellowgreen;
+  border: 1px solid #fff;
+  position: relative;  /*相对自己位置进行偏移*/
+  left: 200rpx;
+  top: 400rpx;
+}
+.absolute{
+  width: 100rpx;
+  height: 100rpx;
+  background-color: pink;
+  border: 1px solid #fff;
+  position: absolute;   /*相对父级已定位元素，其父控件徐定义position: relative*/
+  left: 200rpx;
+  top: 400rpx;
+}

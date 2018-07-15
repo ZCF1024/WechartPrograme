@@ -1,0 +1,39 @@
+<!-- 
+    src: String 要播放视频的资源地址	
+    
+    initial-time: Number 指定视频初始播放位置(不能动态修改)
+    duration: Number 指定视频时长(不能动态修改)
+    
+    controls: true Boolean 是否显示默认播放控件（播放/暂停按钮、播放进度、时间）
+    poster: String 视频封面的图片网络资源地址，需设置 controls=true
+    autoplay: false Boolean 是否自动播放	
+    loop: false Boolean 是否循环播放
+    muted: false Boolean  是否静音播放
+-->
+
+<view>
+  <video src="{{src}}" muted='true'></video>
+</view>
+
+<!-- initial-time 设置视频播放开始时间， duration设置结束时间(相对于原视频)  -->
+<view>
+  <video src="{{src}}" initial-time='30' duration='90'></video>
+</view>
+
+
+<!-- 
+    danmu-list: Object Array 弹幕列表	
+    danmu-btn: false Boolean 是否显示弹幕按钮，只在初始化时有效，不能动态变更	
+    enable-danmu: false Boolean 是否展示弹幕，只在初始化时有效，不能动态变更
+-->
+<view>
+  <video id='myVideo' src="{{localsrc}}" danmu-btn enable-danmu='true' controls/>
+  <button bindtap='getLocalVideo'>获取本地视频</button>
+  <input bindblur='bindInput' placeholder='弹幕内容' />
+  <!-- 用户输入弹幕内容 -->
+  <button bindtap='bindSendDanmu'>发送弹幕</button>
+  <button bindtap='setPlaybackRate'>x{{speeds[speedIndex]}}倍速</button>
+</view>
+
+
+<button bindtap='testLet'>执行</button>

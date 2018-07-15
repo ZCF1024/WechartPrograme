@@ -1,0 +1,32 @@
+
+<!--
+    mode: "normal" 有效值为 "normal", "scanCode"
+    device-position: "back" 前置或后置，值为front, back
+    flash: "auto" 闪光灯，值为auto, on, off
+    scan-area: Array 扫码识别区域，格式为[x, y, w, h]
+                      x,y是相对于camera显示区域的左上角，w,h为区域宽度，单位px，仅在 mode="scanCode" 时生效
+
+    bindstop: 摄像头在非正常终止时触发，如退出后台等情况
+    binderror: 用户不允许使用摄像头时触发
+    bindscancode: 在成功识别到一维码时触发，仅在 mode="scanCode" 时生效
+-->
+<!--必须设置宽高才能显示  -->
+<!--通过调用 cameraContext.takePhoto() 和 cameraContext.scanCode() 可不设置 mode -->
+<view>
+  <camera id= "myCamera" mode="{{mode}}" device-position='{{position}}' flash='{{flash[flashIndex].value}}' 
+       style="width: 100%; height: 300rpx;" />
+  <button type='primary' size='mini' bindtap='takePhoto'>相机</button>
+  <button type='primary' size='mini' bindtap='scanCode'>扫码</button>
+  <button type='primary' size='mini' bindtap='changePosition'>前/后置摄像头</button>
+  <button type='primary' bindtap='changeFlash'>闪光灯({{flash[flashIndex].name}})</button>
+  <image mode="widthFix" src="{{src}}"/>
+  <button type='primary' size='mini' bindtap='startRecord'>开始录制</button>
+  <button type='primary' size='mini' bindtap='stopRecord'>停止录制</button>
+  <video src='{{video}}' />
+  <text>{{show}}</text>
+
+
+  <!--  录制视频
+  https://developers.weixin.qq.com/miniprogram/dev/api/api-camera.html?search-input=scanCode
+    -->
+</view>

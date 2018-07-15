@@ -1,0 +1,21 @@
+.view1{
+  background-color: red;
+}
+.view2-id{
+  background-color: #3483c4;
+}
+.view3{
+  background-color: #34c44c;
+}
+.view4{
+  background-color: #c434ac;
+}
+.view5{
+  background-color: #a5c434;
+}
+.view6{
+  background-color: #c434a0;
+}
+.view7{
+  background-color: #34c4a4;
+}

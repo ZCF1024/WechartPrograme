@@ -1,0 +1,47 @@
+<view>
+  <button size='mini' type='warn'>按钮1</button>
+  <!--
+       size: ("default", "mini")string
+       type: ("primary"(绿色), "default"(白色), "warn"(红色))string
+  -->
+</view>
+<view>
+  <button form-type='submit' type="primary" size='mini'>提交</button>
+  <button form-type='reset' type="primary" size='mini'>重置</button>
+</view>
+<view>
+  <button open-type='contact' type="{{types}}" loading="{{loading}}" plain="{{plain}}">打开客服会话</button>
+
+  <button open-type='share' type="{{types}}" loading="{{loading}}" plain="{{plain}}">转发</button>
+
+  <button open-type="launchApp" type="{{types}}" loading="{{loading}}" plain="{{plain}}">打开APP</button>
+  <!--以通过app-parameter属性设定向APP传的参数具体说明  -->
+
+  <button open-type="openSetting" type="{{types}}" loading="{{loading}}" plain="{{plain}}">授权设置页</button>
+
+  <button open-type="feedback" type="{{types}}" loading="{{loading}}" plain="{{plain}}">意见反馈页面</button>
+  <!--用户可提交反馈内容并上传日志，开发者可以登录小程序管理后台后进入左侧菜单“客服反馈”页面获取到反馈内容  -->
+
+  <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" type="primary" >获取用户信息</button>
+
+  <button type="primary" hover-class="other-button-hover">测试按钮点击后样式</button>
+  <!--无效，原因未知  -->
+
+  <button open-type="exit" type="{{types}}" loading="{{loading}}" plain="{{plain}}">退出</button>
+</view>
+<!--
+      plain: false(默认), boolean 按钮是否镂空，背景色透明
+      loading: false(默认),boolean 名称前是否带 loading 图标
+      disabled: false(默认),是否禁用
+      hover-class: button-hover(默认),指定按钮按下去的样式类。当 hover-class="none" 时，没有点击态效果
+      hover-start-time: 20(默认) 按住后多久出现点击态，单位毫秒
+      hover-stay-time: 70(默认) 手指松开后点击态保留时间，单位毫秒
+      lang： "en"(默认) 指定返回用户信息的语言，zh_CN 简体中文，zh_TW 繁体中文，en 英文
+      bindgetuserinfo: HandlerFunction 用户点击该按钮时，会返回获取到的用户信息，回调的detail数据与wx.getUserInfo返回的一致
+      https://developers.weixin.qq.com/miniprogram/dev/component/button.html 详情API
+  -->
+<view>
+  <button type="primary" size="mini" bindtap="changeType">Type属性</button>
+  <button type="primary" size="mini" bindtap="changeLoading">Loading属性</button>
+  <button type="primary" size="mini" bindtap="changePlain">Plain属性</button>
+</view>

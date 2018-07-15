@@ -1,0 +1,24 @@
+<!-- 数据绑定使用 Mustache 语法（双大括号）将变量包起来 -->
+
+<view>数据绑定可作用于： </view>
+<view class="view1">1. {{text}}</view>
+
+<view class="view2-{{id}}" id="{{id}}-id">2. 组件属性(需要在双引号之内)</view>
+
+<view class="view3" wx:if="{{condition}}">3. 控制属性(需要在双引号之内)</view>
+
+<!--特别注意：不要直接写 checked="false"，其计算结果是一个字符串，转成 boolean 类型后代表真值。  -->
+<view class="view4">4. 关键字(需要在双引号之内)<checkbox checked="{{true}}"></checkbox></view>
+<view class="view5">5. 运算
+    <view><text space='nbsp'>    5.1 三元运算: {{flag ? true:false}}</text></view>
+    <view><text space='nbsp'>    5.2 算法运算: {{a+b}}+{{a*b}}+c</text></view>
+    <view><text space='nbsp'>    5.3 逻辑判断: <view wx:if="{{length > 5}}">{{length}}</view></text></view>
+    <view><text space='nbsp'>    5.4 字符串运算: {{id+"-"+over}}</text></view>
+    <view><text space='nbsp'>    5.5 数据路劲运算: {{object.key}}-{{array[0]}}</text></view>
+</view>
+<view class="view6">6. 组合
+    <view><text space='nbsp'>    6.1 数组: <view wx:for="{{[length,1,2,3,4]}}">{{item}}</view></text></view>
+</view>
+<view class="view7">7. 对象https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/data.html</view>
+
+

@@ -1,0 +1,50 @@
+<!--
+    longitude: Number 中心经度	
+    latitude: Number 中心纬度	
+    scale: Number 16 缩放级别，取值范围为5-18
+    show-location: Boolean 显示带有方向的当前定位点
+-->
+<!-- circles: Array 圆 属性有: 
+              latitude: 纬度，范围 -90.0000 ~ 90.0000(浮点数)
+              longitude: 经度，范围 -180.0000 ~ 180.0000(浮点数)
+              color: 描边的颜色, 8位十六进制表示，后两位表示alpha(透明度)值，如：#000000AA(值越大，透明度越低)
+              strokeWidth: Number 描边的宽度 //color 和 strokeWidth必须指定其中一个，否则不显示
+              fillColor: 填充颜色, 8位十六进制表示，后两位表示alpha值，如：#000000AA
+              radius: Number 半径
+https://developers.weixin.qq.com/miniprogram/dev/component/map.html#map          
+-->
+<view>
+  <view>
+    <map scale="{{scale}}" longitude="114.92" latitude="25.85" circles='{{circles}}' show-location class="cmap"/>
+  </view>
+  <button type="primary" size="mini" bindtap='changeBigger'>放大x{{scale}}</button>
+  <button type="primary" size="mini" bindtap='changeSmaller'>缩小x{{scale}}</button>
+</view>
+
+<!--
+id: Number 控件id 在控件点击事件回调会返回此id
+clickable: false Boolean 是否可点击
+iconPath: "" 控件图标的路径(必填)
+position: Object 控件在地图上相对地图位置的位置(必填): 属性： 
+      Object{left: 0 距离地图的左边界多远
+      top: 0 距离地图的上边界多远
+      width: Number 控件宽度，默认为图片宽度
+      height: Number 控件高度，默认为图片高度}
+  -->
+<view>
+  <view>
+    <map scale="{{scale0}}" controls='{{controls}}' bindcontroltap='clickController' class="cmap"/>
+  </view>
+</view>
+
+<button bindtap='nextPage'>下一页</button>
+<!-- 地图绑定事件
+     bindtap: 点击地图时触发	
+     bindcontroltap: 点击控件时触发，会返回control的id	
+
+     bindmarkertap: 点击标记点时触发，会返回marker的id	
+     bindcallouttap: 点击标记点对应的气泡时触发，会返回marker的id
+     
+     bindregionchange: 视野发生变化时触发     
+     bindupdated: 在地图渲染更新完成时触发
+-->

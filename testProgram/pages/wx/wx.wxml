@@ -1,0 +1,20 @@
+<view class="view1">
+   <!--  条件标签  <view wx:if="{{条件表达式}}">{{ifshow}}</view>   -->
+   <view wx:if="{{true}}">{{"略略略"}}</view>
+
+   <view wx:if="{{number>0}}">{{number}}大于0</view>
+   <view wx:elif="{{number==0}}">{{number}}等于0</view>
+   <view wx:else>{{number}}小于0</view>
+</view>
+
+<view class="view2">
+   <!-- 循环标签 -->
+   <view wx:for="{{['aaa','bbb','ccc']}}">循环内容</view>
+   <!--  循环数组变量，默认通过item循环变量来访问数组的值， 也可以通过wx:for-item="each"自己制定循环变量名
+         <view  wx:for="{{each}}  wx:for-item="each""> 
+         默认通过index变量输出下标, 也可以通过wx:for-index="myindex" 修改变量名
+   -->
+   <view wx:for="{{news}}">
+   {{index}} - {{item}}
+   </view>
+</view>

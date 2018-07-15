@@ -1,0 +1,83 @@
+{
+  "pages": [
+    "pages/first/first",
+    "pages/event/event",
+    "pages/dataBind/dataBind",
+    "pages/wx/wx",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/login_instance/index/index",
+    "pages/login_instance/login/login",
+    "pages/login_instance/user/user",
+    "pages/layout/layout",
+    "pages/component/button/button",
+    "pages/component/index/index",
+    "pages/component/checkBox/checkBox",
+    "pages/component/scroll-view/scroll-view",
+    "pages/component/swiper/swiper",
+    "pages/component/icon/icon",
+    "pages/component/text/text",
+    "pages/component/progress/progress",
+    "pages/component/input/input",
+    "pages/component/radio/radio",
+    "pages/component/slider/slider",
+    "pages/component/picker/picker",
+    "pages/component/form/form",
+    "pages/component/feedback/feedback",
+    "pages/component/navigator/navigator",
+    "pages/component/audio/audio",
+    "pages/component/image/image",
+    "pages/component/video/video",
+    "pages/component/camera/camera",
+    "pages/component/map/map",
+    "pages/component/map/map0",
+    "pages/component/canvas/canvas",
+    "pages/API/index/index",
+    "pages/API/network/request/request",
+    "pages/API/network/index/index",
+    "pages/API/media/index/index",
+    "pages/API/media/Image/image",
+    "pages/API/network/kugouDemo/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#ff8c00",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "导航栏",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false,
+    "onReachBottomDistance": 50
+  },
+  "tabBar": {
+    "color": "#00b7ff",
+    "borderStyle": "black",
+    "selectedColor": "#ff0000",
+    "backgroundColor": "#cccacc",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/first/first",
+        "iconPath": "image/index.png",
+        "selectedIconPath": "image/tab.png",
+        "text": "tabBar"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "pages/login_instance/image/h.png",
+        "selectedIconPath": "pages/login_instance/image/ht.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/event/event",
+        "text": "冒泡"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000,
+    "uploadFile": 10000,
+    "connectSocket": 10000
+  },
+  "debug": false
+}

@@ -1,0 +1,27 @@
+<view class="containers">
+  <view class="top">
+    <image class="topimage" src="https://github.com/ZCF1024/WechartPhoto/blob/master/kugou.jpg?raw=true" />
+  </view>
+  <view class="bottom">
+    <view class="leftpart">
+      <view class="title">
+        <text>排行版</text>
+      </view>
+      <scroll-view scroll-y="true" class="rankContainer">
+        <view wx:for="{{rankList}}" class="name">
+          <text id='{{item.rankid}}' bindtap='getSongList'>{{index+1}}. {{item.rankname}}</text>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="rightpart">
+      <view class="title">
+        <text>版单</text>
+      </view>
+      <scroll-view scroll-y="true" class="rankContainer">
+        <view wx:for="{{songList}}" class="name">
+         <text id='{{item.hash}}' bindtap='getSong'>{{index+1}}：{{item.filename}}</text>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

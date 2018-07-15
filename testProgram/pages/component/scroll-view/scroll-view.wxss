@@ -1,0 +1,9 @@
+.item{
+  background-color: #7fffd4;
+  border: 1px solid #ffffff;
+  /* width: 200rpx; */
+  height: 200rpx;
+}
+.sview{
+  height: 400rpx
+}

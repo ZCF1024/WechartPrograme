@@ -1,0 +1,2 @@
+<button type="primary" bindtap="networkPage">网络</button>
+<button type="primary" bindtap="mediaPage">媒体</button>

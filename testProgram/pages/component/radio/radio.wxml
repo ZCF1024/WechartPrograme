@@ -1,0 +1,14 @@
+<view>
+  <!-- value: ""当该<radio/> 选中时，<radio-group/> 的 change 事件会携带<radio/>的value
+       checked: false Boolean 当前是否选中
+       disabled: falseBoolean 是否禁用
+       color Color radio的颜色，同css的color
+
+       用法与checked相似
+   -->
+  <radio-group class="group" bindchange="change">
+    <label wx:for="{{radioItems}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+    </label>
+  </radio-group>
+</view>

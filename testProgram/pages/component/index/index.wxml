@@ -1,0 +1,21 @@
+<button type="primary" bindtap="buttonPage">按钮组件</button>
+<button type="primary" bindtap="checkBoxPage">多选框组件</button>
+<button type="primary" bindtap="swiperPage">幻灯片</button>
+<button type="primary" bindtap="scrollViewPage">可滚动视图</button>
+<button type="primary" bindtap="iconPage">图标</button>
+<button type="primary" bindtap="textPage">文本</button>
+<button type="primary" bindtap="progressPage">进度条</button>
+<button type="primary" bindtap="inputPage">输入文本框</button>
+<button type="primary" bindtap="radioPage">单项选择器</button>
+<button type="primary" bindtap="sliderPage">滑动选择器</button>
+<button type="primary" bindtap="pickerPage">底部选择器</button>
+<button type="primary" bindtap="formPage">表单</button>
+<button type="primary" bindtap="feedbackPage">操作反馈小组件</button>
+<button type="primary" bindtap="navigatorPage">页面链接组件</button>
+<button type="primary" bindtap="audioPage">音频组件</button>
+<button type="primary" bindtap="imagePage">图片组件</button>
+<button type="primary" bindtap="videoPage">视频组件</button>
+<button type="primary" bindtap="cameraPage">相机组件</button>
+<button type="primary" bindtap="mapPage">地图组件</button>
+<button type="primary" bindtap="canvasPage">画布</button>
+

@@ -1,0 +1,15 @@
+<view>
+  <!--block支持不换行输出  -->
+  <block wx:for="{{sizes}}">
+    <icon type="{{icons[0]}}" size="{{item}}" />
+  </block>
+  <view wx:for="{{icons}}">
+    <icon type="{{item}}" size="40" />___{{item}}
+  </view>
+  <block wx:for="{{colors}}">
+    <icon type="{{icons[0]}}" size="40" color="{{item}}" />
+  </block>
+</view>
+<!--
+icon只包含color, size, type三个属性
+ -->

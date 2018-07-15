@@ -1,0 +1,45 @@
+<!--
+      1. 函数，按钮点击触发函数
+      2. 模板的定义及使用
+      3. 生命周期
+      4. 页面跳转及页面间传递数据
+-->
+
+<!--  导入其他文件控件内容，跟C导入头文件相似，将文件中的内容放在这  -->
+<!-- src为文件的相对位置 -->
+<include src="../templates/header" />
+
+This is a page made by zcf
+
+<!-- 定义按钮 -->
+<button type="default" hover-class="other-button-hover">default</button>
+<button type="primary" bindtap='btnClick'>{{btnText}}</button>
+
+<!-- text标签：文本内容显示text的值   \n是换行-->
+<text class="text1">{{text}} {{pointnum}} 次\n</text>
+
+
+<!--  页面跳转 方法1  -->
+<button type="primary" bindtap='toWxPage'>条件语句</button>
+<!-- <button type="primary" bindtap='toEventPage'>冒泡事件</button> -->
+<!-- 
+     navigateTo, redirectTo 只能打开非 tabBar 页面。
+     switchTab 只能打开 tabBar 页面。
+     reLaunch 可以打开任意页面。  
+-->
+<!--演示不同页面传递数据-->
+<button type="primary" bindtap='toDataBindPage'>数据绑定</button>
+<button type="primary" bindtap='loginInstancePage'>登录实例</button>
+<button type="primary" bindtap='layoutPage'>布局</button>
+<button type="primary" bindtap='componentPage'>组件</button>
+<button type="primary" bindtap='APIPage'>API</button>
+<!-- 页面跳转 方法2  -->
+<navigator url='../logs/logs?id=100' redirect>日志</navigator>
+
+
+
+<!--  导入模板 ,还可通过data来设置模板中变量的值 -->
+<import src="../templates/footers" />
+
+<!-- 设置字符串值时用''单引号，而不是""双引号  -->
+<template is="footer1" data="{{text1:'设置模板中变量的值'}}" />

@@ -1,0 +1,51 @@
+<view class="containers">
+  <view class="swipers">
+    <swiper indicator-dots indicator-active-color='white' autoplay>
+      <swiper-item wx:for="{{scrollImage}}" item-id="{{index}}">
+        <!-- 长宽1 : 2  -->
+        <image src="{{item}}" class="scroll-image" />
+      </swiper-item>
+    </swiper>
+  </view>
+  <scroll-view scroll-y="true" style='height: 730rpx'>
+    <view class="topcontent content">
+      <view class="header">
+        <text>精品推荐</text>
+        <text style='color: limegreen'>全部精品</text>
+      </view>
+      <view class="topcontent-items">
+        <view class="topcontent-item" wx:for="{{contentItemImage}}">
+          <image src='{{item}}' class='topcontent-item-image' />
+          <view class='topcontent-item-text'>
+            <text>{{contentItemText[index]}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="bottomcontent content">
+      <view class="bottomheader header">
+        <text>热门评测</text>
+        <text style='color: limegreen'>全部评测</text>
+      </view>
+      <view class="bottomcontent-item" wx:for="{{bottomcontentitemImage}}">
+        <view class="bottomcontent-item-images">
+          <image class='bottomcontent-item-image' src="{{bottomcontentitemImage[index]}}" />
+          <image class="bottomcontent-item-headimage" src="{{robots[index]}}" />
+        </view>
+        <view class="bottomcontent-item-text">
+          <view class="bottomcontent-item-text-title">
+            <text>{{bottomcontentitemTitle[index]}}</text>
+          </view>
+          <view class="bottomcontent-item-text-content">
+            <text>{{bottomcontentitemContent[index]}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="footcontent">
+    <image id='0' class="footImage" mode='aspectFit' src='{{currentFootImages[0]}}' bindtap='footImageClick' />
+    <image id='1' class="footImage" mode='aspectFit' src='{{currentFootImages[1]}}' bindtap='footImageClick' />
+    <image id='2' class="footImage" mode='aspectFit' src='{{currentFootImages[2]}}' bindtap='footImageClick' />
+  </view>
+</view>

@@ -1,0 +1,9 @@
+.placeholder{
+  color: red
+}
+.item{
+  display: flex;
+}
+.focusbtn{
+  align-self: "center"
+}

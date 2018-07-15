@@ -1,0 +1,84 @@
+<view class="containers">
+  <!-- 
+       1. 普通选择器: 18
+       2. 多列选择器: 40
+       3  时间选择器: 54
+       4. 日期选择器: 68
+       5. 省市选择器: 
+   -->
+  <!--mode为selector(默认)时
+  
+       range: Array/Object Array[] mode为selector或multiSelector时才有效	
+       range-key: String 当range是一个对象数组时，用来指定Object中key的值作为选择器显示内容	
+       value： 0 Number 表示选择了 range 中的第几个（下标从 0 开始）	
+       bindchange： EventHandle value改变时触发 change 事件，event.detail = {value: value}	
+       disabled Boolean false 是否禁用	
+       bindcancel EventHandle  取消选择或点遮罩层收起 picker 时触发  
+    -->
+  <view class="section">普通选择器</view>
+  <!--通过bindpickerChange来设置选择后的choose的值, 若不设置，则为空  -->
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{rangeItems}}">
+    <view class="picker">
+      当前选择：{{rangeItems[choose0]}}
+    </view>
+  </picker>
+
+  <!--range为对象数组时，通过range-key指定对象中的某个字段作为显示到屏幕的内容  -->
+  <picker bindchange="bindPickerChange" range-key="{{'key'}}" value="{{rangeItemOs[index].value}}" range="{{rangeItemOs}}">
+    <view class="picker">
+      当前选择：{{rangeItemOs[choose1].key}}
+    </view>
+  </picker>
+
+  <!--多列选择器mode=multiSelector 
+      range： 二维Array/二维Object Array[], mode为selector或multiSelector 时才有效	
+      range-key： String 当 range 是一个 二维Object Array 时，指定 Object 中 key 的属性作为选择器显示内容	
+      value： Array[] value 每一项的值表示选择了 range 对应项中的第几个（下标从 0 开始）	
+      bindchange： EventHandle value 改变时触发 change 事件，event.detail = {value: value}	
+      bindcolumnchange：	EventHandle 某一列的值改变时触发 columnchange 事件，event.detail = {column:                     column, value: value}，column 的值表示改变了第几列（下标从0开始），value 的值表示变更值的下标  
+   -->
+  <view class="containers">
+    <view class='section'>多列选择器</view>
+    <!-- multiIndex为每列选择结果  -->
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+      <view>当前选择: {{multiArray[0][multiIndex[0]]}}, {{multiArray[1][multiIndex[1]]}}, {{multiArray[2] [multiIndex[2]]}}</view>
+    </picker>
+  </view>
+
+  <!--  时间选择器
+     value: String 0 表示选中的日期，格式为"hh:mm"	
+     start: String 表示有效日期范围的开始，字符串格式为"hh:mm"	
+     end: String 表示有效日期范围的结束，字符串格式为"hh:mm"
+  -->
+  <view class="containers">
+    <view class="section">时间选择器</view>
+    <picker mode="time" bindchange='changeTime' value="{{time}}" start="00:00" end="23:59">
+      <view>但前选择： {{time}}</view>
+    </picker>
+  </view>
+
+
+  <!--  日期选择器
+     value: String 0 表示选中的日期，格式为"YYYY-MM-DD"	
+     start: String 表示有效日期范围的开始，字符串格式为"YYYY-MM-DD"	
+     end: String 表示有效日期范围的结束，字符串格式为"YYYY-MM-DD"
+     fields: String day 有效值 year,month,day，表示选择器的粒度(精确到年，月或日)
+  -->
+  <view class="containers">
+    <view class="section">日期选择器</view>
+    <picker mode="date" bindchange='changeDate' value="{{date}}" start="2016-1-1" end="2020-1-1" fields="month">
+      <view>但前选择: {{date}}</view>
+    </picker>
+  </view>
+
+  <!--省市区选择器  -->
+  <view>
+    <view class='section'>
+      <picker bindchange='changeAddress' mode="region" value='{{address}}' custom-item="全部">
+        <view>当前选择: {{address[0]}},{{address[1]}},{{address[2]}}</view>
+      </picker>
+    </view>
+  </view>
+
+
+</view>

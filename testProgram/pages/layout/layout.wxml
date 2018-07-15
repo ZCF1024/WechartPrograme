@@ -1,0 +1,21 @@
+<view class="container">
+  <!-- order定义元素排列顺序 -->
+  <view class="item" style="order: 2">1</view>
+  <view class="item i2" style="order: 1">2</view>
+  <view class="item" style="order: 4">3</view>
+  <view class="item"style="order: 3">4</view>
+  <!-- <view class="item">5</view>
+  <view class="item">6</view>
+  <view class="item">7</view>
+  <view class="item">8</view>
+  <view class="item">9</view>
+  <view class="item">10</view>
+  <view class="item">11</view>
+  <view class="item">12</view>
+  <view class="item">13</view>
+  <view class="item">14</view>
+  <view class="item">15</view>
+  <view class="item">16</view>  -->
+  <view class="relative">相对定位</view>
+  <view class="absolute">绝对定位</view>
+</view>

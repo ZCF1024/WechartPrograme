@@ -1,0 +1,8 @@
+<checkbox-group bindchange="checkBoxChange">
+  <!--label标签可以将文字与checkbox绑定，即点击文字也可以选中  -->
+  <label class="checkbox" wx:for='{{items}}'>
+    <checkbox value="{{item.value}}"  checked="{{item.checked}}"/>{{item.value}}
+    <!--设置checked显示默认选项  -->
+  </label>
+</checkbox-group>
+<!--https://developers.weixin.qq.com/miniprogram/dev/component/checkbox.html  -->

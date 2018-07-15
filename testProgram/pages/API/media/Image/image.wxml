@@ -1,0 +1,6 @@
+<button type="primary" bindtap="chooseImages">选择图片</button>
+<view>
+  <view class="chooseImage" wx:for="{{choosenImages}}">
+    <image src="{{item}}" class='image'/>
+  </view>
+</view>

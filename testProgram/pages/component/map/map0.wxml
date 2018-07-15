@@ -1,0 +1,70 @@
+<!--
+    markers: Array 标记点   ---6
+    polyline: Array 路线    ---61
+    include-points: Array 缩放视野以包含所有给定的坐标点
+-->
+<!-- markers Array中对象属性
+     id： Number 标记点id， marker点击事件回调会返回此id。	
+     latitude： 纬度(-90.0000~90.0000)(必填)
+     longitude	经度(-180.0000~180.0000)(必填)
+     title: 标注点名
+
+     iconPath: "" 标记点显示的图标的地址(项目目录下的图片路径)(必填)
+     width: 标注图标宽度，默认为图片实际宽度	
+     height: 标注图标高度，默认为图片实际高度	
+
+     rotate: 0 顺时针旋转的角度，范围 0 ~ 360
+     alpha: 1 标注的透明度，范围 0 ~ 1
+     
+     callout: Object 自定义标记点上方的气泡窗口，可识别换行符。   ----31
+     label: Object 为标记点旁边增加标签，可识别换行符。   ---44
+     anchor: Object 经纬度在标注图标的锚点，默认底边中点{x, y}，x表示横向(0-1)，y表示竖向(0-1)。{x: .5, y: 1} 表示底边中点
+
+-->
+ <view>
+  <view>
+    <map longitude="114.92" latitude="25.85" markers='{{markers}}' polyline='{{polyline}}' show-location/>
+  </view>
+</view>
+
+
+<!-- markers上的calloutd的属性：
+         content: String 文本         
+         color: String 文本颜色(8位十六进制)(后两位表示透明度)
+         fontSize: Number 文字大小
+         textAlign: 文本对齐方式。有效值: left, right, center	String
+         padding: Number 文本边缘留白
+         
+         borderRadius: Number callout边框圆角 (值越大角度越园)
+         bgColor: String 背景色(8为十六进制)(后两位表示透明度)
+         display: {'BYCLICK':点击显示; 'ALWAYS':常显}
+         
+-->
+
+<!-- markers上的label的属性：
+         content: String 文本
+         color: String 文本颜色(8位十六进制)(后两位表示透明度)
+         fontSize: Number 文字大小
+         textAlign: "left" 文本对齐方式。有效值: left, right, center
+         padding: Number 文本边缘留白
+         
+         anchorX:	Number  label的坐标，原点是 marker 对应的经纬度
+         anchorY:	Number  label的坐标，原点是 marker 对应的经纬度
+         bgColor: "" 背景色(8位十六进制)(后两位表示透明度)  
+         
+         borderWidth: Number 边框宽度
+         borderColor: "" 边框颜色
+         borderRadius: Number 边框圆角(值越大角度越园)                
+-->
+
+
+<!--polyline 指定一系列坐标点，从数组第一项连线至最后一项
+     points: Array 经纬度数组(必填) [{latitude: 0, longitude: 0}]
+     color: "#000000AA "线的颜色(8位十六进制表示)，后两位表示透明度
+     width： Number 线的宽度	
+     dottedLine： false 是否虚线
+     arrowLine： false 带箭头的线
+     arrowIconPath： 更换箭头图标(arrowLine=true)
+     borderColor: 线的边框颜色
+     borderWidth: 线的厚度
+-->

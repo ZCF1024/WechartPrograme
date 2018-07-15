@@ -1,0 +1,1 @@
+<button type="primary" bindtap="request">Wx.request</button>

@@ -1,0 +1,14 @@
+.normal{
+   height: 400rpx;
+}
+.style{
+   background-color: aquamarine;
+   top: 400rpx;
+   position: absolute;
+}
+.absolute{
+  border: 1px solid #fff;
+  position: absolute;
+  left: 300rpx;
+  top: 1100rpx;
+}

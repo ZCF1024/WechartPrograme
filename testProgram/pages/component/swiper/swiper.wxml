@@ -1,0 +1,34 @@
+<view>
+  <!--
+     indicator-dots:  //boolean 是否显示面板指示点
+     indecator-color: "red", //string 指示点颜色
+     indicator-active-color: "#7fffd4", //string 当前选中指示点的颜色
+     
+     current: "0", ,//当前所在滑块(序号)(Number)
+     current-item-id: "",//当前所在滑块的 item-id ，不能与 current 被同时指定
+
+     autopaly: true, //boolean 自动切换
+     interval: "2000", //自动切换时间间隔(ms)
+     duration: "500", //滑块滑动持续的时间
+
+     bindchange: function(), current 改变时会触发 change 事件，event.detail = {current: , source: }
+                                                            current: 当前滑块
+                                                            source: 事件触发者(autoplay或touch用户点击)
+                                                            其他原因将用空字符串表示。
+
+     //其他属性见 https://developers.weixin.qq.com/miniprogram/dev/component/swiper.html
+  -->
+  <swiper indicator-dots="true" autoplay="true" bindchange="swiperChange">
+    <!-- 其中只可放置<swiper-item/>组件，否则会导致未定义的行为。 -->
+    <swiper-item item-id="1">
+      <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg" />
+    </swiper-item>
+    <swiper-item item-id="3">
+      <image src="http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg" />
+    </swiper-item>
+    <swiper-item item-id="2">
+      <image src="http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg" />
+    </swiper-item>
+
+  </swiper>
+</view>

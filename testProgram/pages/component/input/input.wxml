@@ -1,0 +1,76 @@
+<view>
+  <!--
+      value: 输入框初始内容
+      placeholder: 输入框为空时占位符
+      placeholder-style: "color: red", 指定 placeholder 的样式
+      placeholder-class: "", 指定 placeholder 的样式类
+
+      password: false, 输入密码
+
+      disable: 是否禁用
+
+      maxlength: 140 设置最大长度(单位：字符)，为-1时不限长度
+
+      selection-start="2" 
+      selection-end="3" 设置焦点起始位置，可用于自动选中内容
+      cursor: 2  指定光标位置
+
+      adjust-position  键盘弹起时，是否自动上推页面
+
+      bindinput: function 键盘输入时触发，event.detail={value, cursor, keyCode}，
+                  keyCode 为键值，处理函数可以直接 return 一个字符串，可以对用户输入的数据进行处理并显示到输入框内。
+      bindfocus: 输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度
+      bindblur: 输入框失去焦点时触发，event.detail = {value: value}
+      bindconfirm: 点击完成按钮时触发，event.detail = {value: value}
+
+      type: input 数据的类型
+      confirm-type: 设置键盘右下角按钮的文字
+      详细见下例
+
+  -->
+  <!--placeholder, value, maxlength  focus-->
+  <view class="item">
+    <input value="初始内容" placeholder="输入框为空时的占位符" maxlength='10' focus="{{focus}}" />
+    <button type="primary" size='mini' bindtap="setFocus" class="focusbtn">焦点</button>
+  </view>
+
+  <!--selection-start  selection-end  -->
+  <input focus='true' value="测试selection-start&end" selection-start="1" selection-end="5" />
+
+  <!-- cursor  -->
+  <view class="item">
+    <input value='指定focus时的光标位置' cursor='3' focus="{{cursorFocus}}" />
+    <button type='primary' size='mini' bindtap='setCursorFocus'>焦点</button>
+  </view>
+
+  <!--bindinput: inputFuc输入'123'返回'zcf'  -->
+  <view class="item">
+    <input bindinput='inputFuc' bindfocus='focusFuc' bindconfirm='confirmFuc' placeholder="测试事件" />
+  </view>
+
+  <!--
+       type: number: 数字输入键盘
+             digit: 带小数点数字输入键盘
+             idcard: 身份证输入键盘
+       confirm-type: send: 右下角按钮为'发送'
+                     search: 右下角按钮为'搜索'
+                     next: 右下角按钮为'下一个'
+                     go: 右下角按钮为'前往'
+                     done: 右下角按钮为'查找'
+  
+    -->
+  <view class="item">
+    <input placeholder='文本键盘' type="text" confirm-type='send' />
+  </view>
+  <view class="item">
+    <input placeholder='数字键盘' type="number" confirm-type='search' />
+  </view>
+  <view class="item">
+    <input placeholder='身份证键盘' type="idcard" confirm-type='send' />
+  </view>
+  <view class="item">
+    <input placeholder='小数键盘' type="digit" confirm-type='send' />
+  </view>
+
+
+</view>

@@ -1,0 +1,2 @@
+<button type="primary" bindtap="kugouDemoPage">酷狗</button>
+<button type="primary" bindtap="requestPage">wx.request</button>

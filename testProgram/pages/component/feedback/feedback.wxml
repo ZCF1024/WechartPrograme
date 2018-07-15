@@ -1,0 +1,50 @@
+<!--
+     <action-sheet>  底部弹出选择框，类似picker ---14
+     <modal>   弹出确认框  --31
+     <toast>   自动消失提示框  --39
+     <loading> 加载框  --47
+-->
+
+<!-- 底部弹出选择框
+     hidden: 是否隐藏action-sheet
+     action-sheet, action-sheet-cancel和action-sheet-item绑定的事件可以自定义，此例为了方便，绑定同一个函数
+     通过data-xxxx   定义action-sheet-item中带的参数名(xxx)和值
+  -->
+<view>
+  <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange">
+    <action-sheet-item bindtap="actionSheetChange" data-name="江西-选项1">选项1</action-sheet-item>
+    <action-sheet-item bindtap="actionSheetChange" data-name="赣州-选项2">选项2</action-sheet-item>
+    <action-sheet-item bindtap="actionSheetChange" data-name="南康-选项3">选项3</action-sheet-item>
+
+    <action-sheet-cancel>取消</action-sheet-cancel>
+  </action-sheet>
+  <button type='primary' bindtap='actionSheetChange'>action-sheet</button>
+</view>
+
+<!--弹出确认框
+    no-cancel: false Boolean 是否隐藏 cancel 按钮(强制确认)
+    confirm-text: "" confirm按钮上的文字
+    cancel-text: "" cancel按钮上的文字
+    bindconfirm: 点击confirm触发的事件
+    bindcancel: 点击cancel触发的事件
+-->
+<view>
+  <modal hidden="{{modalHidden}}" confirm-text="确认" cancel-text="取消" bindconfirm="modalChange" bindcancel="modalChange">弹出框内容</modal>
+  <button type="primary" bindtap='modalChange'>弹出框</button>
+</view>
+
+<!--自动消失提示框
+      duration: 设置触发bindchange事件的时间
+-->
+<view>
+  <toast hidden="{{toastHidden}}" duration="1500" bindchange="toastChange">提示内容</toast>
+  <button type="primary" bindtap='toastChange'>自动消失提示框</button>
+</view>
+
+<!-- 加载框
+     通过点击按钮调用setTimeout(function{})来指定一定时间后执行某个函数来使他消失
+-->
+<view>
+  <loading hidden="{{loadingHidden}}">加载中</loading>
+  <button type="primary" bindtap='loadingChange'>加载框</button>
+</view>

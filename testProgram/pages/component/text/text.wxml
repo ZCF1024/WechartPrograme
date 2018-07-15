@@ -1,0 +1,22 @@
+<!--
+    selectable: false boolean 是否可选
+    space: "" 显示连续空格("ensp", "emsp", "nbsp")
+              ensp: 中文字符空格一半大小
+              emsp: 中文字符空格大小
+              nbsp: 根据字体设置的空格大小
+    decode: false boolean 是否解码
+ -->
+<view>
+  <view>
+    <text selectable="true">是否支持长按选中</text>
+  </view>
+  <view>
+    <text space="emsp">空 格 emsp(中文字符空格大小)</text>
+  </view>
+  <view>
+    <text space="ensp">空 格 ensp(中文字符空格一半大小)</text>
+  </view>
+  <view>
+    <text space="nbsp">空 格nbsp(根据字体设置的空格大小)</text>
+  </view>
+</view>

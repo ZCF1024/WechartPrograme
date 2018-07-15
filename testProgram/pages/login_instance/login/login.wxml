@@ -1,0 +1,28 @@
+<view>
+   <view class="item">
+   <!--image不能成对出现，否则无法修改其style属性  -->
+    <image src='../image/login.jpg' class='img' /> 
+   </view>
+   <view class="item">
+      <view class="login-item">
+          <view class="login-item-info">用户名</view>
+          <view><input /></view>
+      </view>
+            <view class="login-item">
+          <view class="login-item-password">密码</view>
+          <view>
+              <input style='flex-grow: 1' password='true' />
+              <text>忘记密码</text>
+          </view> 
+      </view>
+      <view class="login-item-bottom">
+          <button class="login-button" bindtap='loginFuc'>登录</button>
+      </view>
+   </view>
+  <view class="item-bottom-info">
+       <view>没有账户？<text>注册</text></view>
+          <view class="wechat-icon">
+          <image></image>
+       </view>
+  </view>
+</view>

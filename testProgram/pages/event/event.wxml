@@ -1,0 +1,18 @@
+<!--  冒泡事件  
+      view3包含在view1和view2中，当view3被触发时，view1和view2也会被触发
+-->
+<!-- bindtap, catchtap: 绑定事件  
+     bindtap: 绑定冒泡事件
+     catchtap: 绑定非冒泡事件
+-->
+<!--通过data-属性名  可自定义属性，及属性值  -->
+<text>{{text}}</text>
+<view id= "view1" class="view1" bindtap='view1click' data-title="Myview" data-name="朱才富">
+  view1
+  <view id= "view2" class="view2" bindtap='view2click'>
+      view2
+      <view id= "view3" class="view3" catchtap='view3click'>
+         view3
+      </view>
+  </view>
+</view>

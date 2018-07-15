@@ -1,0 +1,44 @@
+<!-- 表单，将组件内的用户输入的<switch/> <input/> <checkbox/> <slider/> <radio/> <picker/> 提交。
+     当点击 <form/> 表单中 formType 为 submit 的 <button/> 组件时，
+    会将表单组件中的 value 值进行提交，需要在表单组件中加上 name 来作为 key。
+-->
+
+<!--
+     bindsubmit: EventHandle 携带表单中的数据触发 submit 事件，event.detail = {value : {'name': 'value'} , formId: ''}	
+    bindreset: EventHandle 表单重置时会触发 reset 事件
+    report-submit： Boolean 是否返回 formId 用于发送模板消息
+-->
+<view>
+  <form bindsubmit='submit' bindreset='reset'>
+    姓名：
+    <input name="name" />
+
+    <view class='containers'>
+      性别：
+      <radio-group name="gender">
+        <label wx:for="{{genders}}">
+          <radio value='{{item.gender}}' checked='{{item.checked}}' />{{item.gender}}
+        </label>
+      </radio-group>
+    </view>
+
+    年龄：
+    <input type='number' name="age" /> 
+    
+    屏幕亮度：
+    <slider min='0' max='10' name="light" show-value='true' /> 
+    
+    成年：
+    <switch type='switch' name="isadult" /> 
+    
+    用过的手机：
+    <checkbox-group name="phone">
+      <label wx:for="{{phones}}">
+        <checkbox value="{{item.value}}" checked='{{item.checked}}' />{{item.value}}
+      </label>
+    </checkbox-group>
+
+    <button form-type='submit' type='primary' size='mini'>提交</button>
+    <button form-type='reset' type='primary' size='mini'>重置</button>
+  </form>
+</view>
